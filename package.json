@@ -19,7 +19,8 @@
     "reactify": "^0.14.0",
     "gulp-webserver": "^0.8.3",
     "vinyl-source-stream": "^1.0.0",
-    "coffee-reactify": "^1.0.3"
+    "coffee-reactify": "^1.0.3",
+    "gulp-stubcell": "^0.7.0"
   },
   "dependencies": {
     "underscore": "^1.7.0",

@@ -1,8 +1,11 @@
 gulp       = require 'gulp'
+
+webserver  = require 'gulp-webserver'
+stubcell   = require 'gulp-stubcell'
+
+watch      = require 'gulp-watch'
 browserify = require 'browserify'
 source     = require 'vinyl-source-stream'
-watch      = require 'gulp-watch'
-webserver  = require 'gulp-webserver'
 reactify   = require 'coffee-reactify'
 
 gulp.task 'browserify', ->
@@ -19,10 +22,23 @@ gulp.task 'server', ->
       port: 9001
       livereload: true
       directoryListing: false
-      proxies: []
+      proxies: [
+        source: "/api/members"
+        target: "localhost:3000/members"
+      ]
+      #middleware: (connect, o) ->
+      #  return ->
+      #    options = url.parse 'http"://localhost:3000/test'
+      #    options.root = '/test'
+      #    proxy options
+
+gulp.task 'stubcell', ->
+  stubcell.start
+    entry: 'api/entry.yml'
+    port: 3000
 
 gulp.task 'watch', ->
   gulp.watch 'coffee/**/*', ['browserify']
 
-gulp.task 'default', ['server', 'watch']
+gulp.task 'default', ['server', 'stubcell', 'watch']
 
