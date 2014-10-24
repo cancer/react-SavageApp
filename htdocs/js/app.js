@@ -3,13 +3,13 @@ var React, app;
 
 React = require('react');
 
-app = require('./coffee/index.cjsx');
+app = require('./index.cjsx');
 
-React.renderComponent(app(), document.getElementById('content'));
+React.renderComponent(app(), document.getElementById('main'));
 
 
 
-},{"./coffee/index.cjsx":2,"react":147}],2:[function(require,module,exports){
+},{"./index.cjsx":2,"react":147}],2:[function(require,module,exports){
 var App, React;
 
 React = require('react/react');

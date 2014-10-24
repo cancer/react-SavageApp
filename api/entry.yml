@@ -1,0 +1,7 @@
+-
+  request:
+    url: /api/members
+    method: GET
+  response:
+    status: 200
+    file: members/_get.json

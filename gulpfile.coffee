@@ -7,13 +7,20 @@ watch      = require 'gulp-watch'
 browserify = require 'browserify'
 source     = require 'vinyl-source-stream'
 reactify   = require 'coffee-reactify'
+jade       = require 'gulp-jade'
 
 gulp.task 'browserify', ->
   b = browserify()
   b.transform reactify
-  b.add './app.coffee'
+  b.add './coffee/app.coffee'
   b.bundle()
     .pipe source 'app.js'
+    .pipe gulp.dest './htdocs/js'
+
+gulp.task 'template', ->
+  gulp.src './jade/**/*.jade'
+    .pipe jade
+      locals: {}
     .pipe gulp.dest './htdocs'
 
 gulp.task 'server', ->
@@ -39,6 +46,7 @@ gulp.task 'stubcell', ->
 
 gulp.task 'watch', ->
   gulp.watch 'coffee/**/*', ['browserify']
+  gulp.watch 'jade/**/*.jade', ['template']
 
 gulp.task 'default', ['server', 'stubcell', 'watch']
 

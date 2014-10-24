@@ -1,0 +1,12 @@
+{
+  "members": [
+    {
+      "name": "cancer",
+      "isAwaken": true
+    },
+    {
+      "name": "geckotang",
+      "isAwaken": false
+    }
+  ]
+}
