@@ -17,7 +17,7 @@ Members = React.createClass
         サバゲ部のメンバーを管理できます
       </p>
       <MemberAdd   className="member-add" />
-      <MembersList className="member-list" members={@props.members} />
+      <MembersList className="members-list" members={@props.members} />
       <MailTemplate />
     </div>
 

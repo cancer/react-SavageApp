@@ -1,6 +1,6 @@
 # @cjsx React.DOM 
 
-React = require 'react/react'
+React = require 'react/addons'
 
 MemberEdit = React.createClass
   render: ->
@@ -15,7 +15,12 @@ MemberEdit = React.createClass
       actionBtnForDelete : "#{className}__action__btn #{className}__action__btn--delete"
       actionBtnForClose  : "#{className}__action__btn #{className}__action__btn--close"
 
-    <div className={className}>
+    _classes = {}
+    _classes[className] = true
+    _classes["is--hidden"] = !@props.visible
+    classSet = React.addons.classSet _classes
+
+    <div className={classSet}>
       <div className={BEMElement.name}>
         <div className={BEMElement.nameLabel}>名前</div>
         <div className={BEMElement.nameValue}>
