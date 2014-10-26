@@ -1,4 +1,23 @@
-React = require 'react'
-members = require './coffee/component/members.cjsx'
+React   = require 'react'
+Members = require './component/members.cjsx'
 
-React.renderComponent app(), document.getElementById 'main'
+MEMBERS = [
+  {
+    "name": "cacner"
+    "isAwaken": true
+  },
+  {
+    "name": "geckotang"
+    "isAwaken": false
+  },
+  {
+    "name": "gundam"
+    "isAwaken": true
+  },
+  {
+    "name": "chalo"
+    "isAwaken": false
+  }
+]
+
+React.renderComponent <Members members={MEMBERS} />, document.getElementById 'main'

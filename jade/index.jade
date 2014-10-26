@@ -12,7 +12,7 @@ html(lang="ja")
     #head.bar.bar-nav
         h1.head__title.title SavageApp
 
-    #mainx.content.content-padded
+    #main.content.content-padded
       .members
         .members-headline
           h2.members-headline__title メンバーリスト
@@ -64,72 +64,6 @@ html(lang="ja")
             textarea(readonly)
           .mail-template__buttons
             a.mail-template__button-select テキストを選択する
-
-    #main
-      ul.members
-        li.members__member(ng-repeat="member in members")
-          .members__summary(ng-show="!member.isEditorShow")
-            .members__name {{member.name}}
-            .members__state
-              .members__state-item
-                nt-awaken-checkbox
-              .members__state-item
-                a.members__btn-edit(
-                  class="btn"
-                  ng-click="showEdit(member)",
-                  nt-prevent-tap
-                ) 編集
-          .members-form(ng-show="member.isEditorShow")
-            .members-form__row
-              .members-form__label 名前
-              .members-form__value
-                input(ng-model="member", value="data.name", type="text")
-            .members-form__btns
-              .members-form__btns-item
-                a.btn(
-                  ng-click="save(member)",
-                  class="btn-positive btn-block btn-outlined",
-                  nt-prevent-tap
-                )
-                  .icon(class="icon-edit")
-              .members-form__btns-item
-                a.btn(
-                  ng-click="delete(member)"
-                  class="btn-negative btn-block btn-outlined",
-                  nt-prevent-tap
-                )
-                  .icon(class="icon-trash")
-              .members-form__btns-item
-                a.btn(
-                  ng-click="hideEdit(member)"
-                  class="btn btn-block btn-outlined",
-                  nt-prevent-tap
-                )
-                  .icon(class="icon-close")
-
-
-      a.mail-template__button-create(
-        ng-click="toggleMailForm()"
-        ng-class="{'active': isMailFormShow}"
-      )
-        span 起床メール作成
-
-
-      .mail-template(ng-show="isMailFormShow")
-        .mail-template__heading
-          h3.mail-template__heading-title 起床メールを作成しました
-          .mail-template__heading-extra
-            a.mail-template__button-closeMailForm(
-              ng-click="toggleMailForm()",
-              nt-prevent-tap
-            )
-
-        .mail-template__text
-          p 選択ボタンをクリックするとテキストが選択されるので、コピーしてご利用ください。
-        .mail-template__textarea
-          textarea(nt-select-on-focus, nt-mail-template-str, readonly)
-        .mail-template__buttons
-          a.mail-template__button-select(nt-select-on-click) テキストを選択する
 
     #foot
       .bar.bar-tab
