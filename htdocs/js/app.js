@@ -28,11 +28,11 @@ React.renderComponent(React.createElement(Members, {
 
 
 },{"./component/members.cjsx":2,"react":152}],2:[function(require,module,exports){
-var AddMember, MailTemplate, Members, MembersList, React;
+var MailTemplate, MemberAdd, Members, MembersList, React;
 
 React = require('react/react');
 
-AddMember = require('./members/add.cjsx');
+MemberAdd = require('./members/add.cjsx');
 
 MembersList = require('./members/list.cjsx');
 
@@ -48,7 +48,9 @@ Members = React.createClass({
       "className": "members-headline__title"
     }, "\u30e1\u30f3\u30d0\u30fc\u30ea\u30b9\u30c8")), React.createElement(React.DOM.p, {
       "className": "members-headline__lead"
-    }, "\u30b5\u30d0\u30b2\u90e8\u306e\u30e1\u30f3\u30d0\u30fc\u3092\u7ba1\u7406\u3067\u304d\u307e\u3059"), React.createElement(AddMember, null), React.createElement(MembersList, {
+    }, "\u30b5\u30d0\u30b2\u90e8\u306e\u30e1\u30f3\u30d0\u30fc\u3092\u7ba1\u7406\u3067\u304d\u307e\u3059"), React.createElement(MemberAdd, {
+      "className": "member-add"
+    }), React.createElement(MembersList, {
       "className": "member-list",
       "members": this.props.members
     }), React.createElement(MailTemplate, null));
@@ -60,17 +62,23 @@ module.exports = Members;
 
 
 },{"./members/add.cjsx":3,"./members/list.cjsx":5,"./members/mail.cjsx":6,"react/react":152}],3:[function(require,module,exports){
-var AddMember, React;
+var MemberAdd, React;
 
 React = require('react/react');
 
-AddMember = React.createClass({
+MemberAdd = React.createClass({
   render: function() {
-    return React.createElement(React.DOM.div, null, "Add member.");
+    return React.createElement(React.DOM.div, {
+      "className": this.props.className
+    }, React.createElement(React.DOM.a, {
+      "className": "btn btn-primary btn-block btn-outlined"
+    }, React.createElement(React.DOM.i, {
+      "className": "icon icon-plus"
+    }), "\u30e1\u30f3\u30d0\u30fc\u8ffd\u52a0"));
   }
 });
 
-module.exports = AddMember;
+module.exports = MemberAdd;
 
 
 

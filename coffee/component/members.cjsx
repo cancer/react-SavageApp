@@ -1,7 +1,7 @@
 # @cjsx React.DOM 
 
 React        = require 'react/react'
-AddMember    = require './members/add.cjsx'
+MemberAdd    = require './members/add.cjsx'
 MembersList  = require './members/list.cjsx'
 MailTemplate = require './members/mail.cjsx'
 
@@ -16,7 +16,7 @@ Members = React.createClass
       <p className="members-headline__lead">
         サバゲ部のメンバーを管理できます
       </p>
-      <AddMember />
+      <MemberAdd   className="member-add" />
       <MembersList className="member-list" members={@props.members} />
       <MailTemplate />
     </div>

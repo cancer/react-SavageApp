@@ -2,9 +2,14 @@
 
 React        = require 'react/react'
 
-AddMember = React.createClass
+MemberAdd = React.createClass
   render: ->
-    <div>Add member.</div>
+    <div className={@props.className}>
+      <a className="btn btn-primary btn-block btn-outlined">
+        <i className="icon icon-plus" />
+        メンバー追加
+      </a>
+    </div>
 
-module.exports = AddMember
+module.exports = MemberAdd
 
