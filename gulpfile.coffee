@@ -20,12 +20,14 @@ gulp.task 'browserify', ->
     .pipe source 'app.js'
     .pipe gulp.dest './htdocs/js'
 
+# compile jade
 gulp.task 'template', ->
   gulp.src './jade/**/*.jade'
     .pipe jade
       locals: {}
     .pipe gulp.dest './htdocs'
 
+# compile scss
 gulp.task 'css', ->
   gulp.src 'scss/**/*.scss'
     .pipe compass
@@ -33,8 +35,13 @@ gulp.task 'css', ->
       sass: './scss'
       bundle_exec: true
     .pipe autoprefixer()
-    .pipe cssmin()
+    #.pipe cssmin()
     .pipe gulp.dest './htdocs/css'
+
+# copy font
+gulp.task 'fonts', ->
+  gulp.src './bower_components/ratchet/fonts/**/*'
+    .pipe gulp.dest './htdocs/fonts'
 
 gulp.task 'server', ->
   gulp.src './htdocs'
