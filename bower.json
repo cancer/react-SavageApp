@@ -1,0 +1,16 @@
+{
+  "name": "react-SavageApp",
+  "version": "0.0.0",
+  "homepage": "https://github.com/cancer/react-SavageApp",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ratchet": "~2.0.2"
+  }
+}

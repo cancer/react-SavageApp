@@ -1,13 +1,16 @@
-gulp       = require 'gulp'
+gulp         = require 'gulp'
 
-webserver  = require 'gulp-webserver'
-stubcell   = require 'gulp-stubcell'
+webserver    = require 'gulp-webserver'
+stubcell     = require 'gulp-stubcell'
 
-watch      = require 'gulp-watch'
-browserify = require 'browserify'
-source     = require 'vinyl-source-stream'
-reactify   = require 'coffee-reactify'
-jade       = require 'gulp-jade'
+jade         = require 'gulp-jade'
+compass      = require 'gulp-compass'
+autoprefixer = require 'gulp-autoprefixer'
+cssmin       = require 'gulp-cssmin'
+watch        = require 'gulp-watch'
+browserify   = require 'browserify'
+source       = require 'vinyl-source-stream'
+reactify     = require 'coffee-reactify'
 
 gulp.task 'browserify', ->
   b = browserify()
@@ -22,6 +25,16 @@ gulp.task 'template', ->
     .pipe jade
       locals: {}
     .pipe gulp.dest './htdocs'
+
+gulp.task 'css', ->
+  gulp.src 'scss/**/*.scss'
+    .pipe compass
+      css: './htdocs/css'
+      sass: './scss'
+      bundle_exec: true
+    .pipe autoprefixer()
+    .pipe cssmin()
+    .pipe gulp.dest './htdocs/css'
 
 gulp.task 'server', ->
   gulp.src './htdocs'
@@ -46,7 +59,8 @@ gulp.task 'stubcell', ->
 
 gulp.task 'watch', ->
   gulp.watch 'coffee/**/*', ['browserify']
-  gulp.watch 'jade/**/*.jade', ['template']
+  gulp.watch 'jade/**/*',   ['template']
+  gulp.watch 'scss/**/*',   ['css']
 
 gulp.task 'default', ['server', 'stubcell', 'watch']
 
