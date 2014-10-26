@@ -5,14 +5,144 @@ html(lang="ja")
     meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=no")
     meta(http-equiv="Cache-Control", content="no-cache")
     meta(http-equiv="Pragma", content="no-cache")
-    link(href="//cdn.jsdelivr.net/ratchet/2.0.2/css/ratchet.min.css")
     link(href="css/app.css", rel="stylesheet")
     title SavageApp
   body
 
-    .bar.bar-nav
-      h1.title SavageApp
+    #head.bar.bar-nav
+        h1.head__title.title SavageApp
 
-    #main.content.content-padded
+    #mainx.content.content-padded
+      .members
+        .members-headline
+          h2.members-headline__title メンバーリスト
+
+          p.members-headline__lead サバゲ部のメンバーを管理できます
+
+        .add-new-member
+          a.btn.btn-primary.btn-block.btn-outlined
+            .icon(class="icon-plus") メンバー追加
+
+        ul.members-list
+          li.members-list__member
+            .member-summary
+              .member-summary__name
+              .member-summary__status
+                .member-summary__status__action
+                  .member-summary__checkbox
+                .member-summary__status__action
+                  a.member-summary__btn-edit 編集
+            .member-edit
+              .member-edit__name
+                .member-edit__name__label 名前
+                .member-edit__name__value
+                  input(type="text")
+              .member-edit__action
+                .member-edit__action__btn.member-edit__action__btn--save
+                  a.btn.btn-positive.btn-block.btn-outlined
+                    .icon.icon-edit
+                .member-edit__action__btn.member-edit__action__btn--delete
+                  a.btn.btn-negative.btn-block.btn-outlined
+                    .icon.icon-trash
+                .member-edit__action__btn.member-edit__action__btn--close
+                  a.btn.btn.btn-block.btn-outlined
+                    .icon.icon-close
+
+      .mail-template
+        a.mail-template__button-create
+          span 起床メール作成
+
+        .mail-template
+          .mail-template__heading
+            h3.mail-template__heading-title 起床メールを作成しました
+            .mail-template__heading-extra
+              a.mail-template__button-closeMailForm
+
+          .mail-template__text
+            p 選択ボタンをクリックするとテキストが選択されるので、コピーしてご利用ください。
+          .mail-template__textarea
+            textarea(readonly)
+          .mail-template__buttons
+            a.mail-template__button-select テキストを選択する
+
+    #main
+      ul.members
+        li.members__member(ng-repeat="member in members")
+          .members__summary(ng-show="!member.isEditorShow")
+            .members__name {{member.name}}
+            .members__state
+              .members__state-item
+                nt-awaken-checkbox
+              .members__state-item
+                a.members__btn-edit(
+                  class="btn"
+                  ng-click="showEdit(member)",
+                  nt-prevent-tap
+                ) 編集
+          .members-form(ng-show="member.isEditorShow")
+            .members-form__row
+              .members-form__label 名前
+              .members-form__value
+                input(ng-model="member", value="data.name", type="text")
+            .members-form__btns
+              .members-form__btns-item
+                a.btn(
+                  ng-click="save(member)",
+                  class="btn-positive btn-block btn-outlined",
+                  nt-prevent-tap
+                )
+                  .icon(class="icon-edit")
+              .members-form__btns-item
+                a.btn(
+                  ng-click="delete(member)"
+                  class="btn-negative btn-block btn-outlined",
+                  nt-prevent-tap
+                )
+                  .icon(class="icon-trash")
+              .members-form__btns-item
+                a.btn(
+                  ng-click="hideEdit(member)"
+                  class="btn btn-block btn-outlined",
+                  nt-prevent-tap
+                )
+                  .icon(class="icon-close")
+
+
+      a.mail-template__button-create(
+        ng-click="toggleMailForm()"
+        ng-class="{'active': isMailFormShow}"
+      )
+        span 起床メール作成
+
+
+      .mail-template(ng-show="isMailFormShow")
+        .mail-template__heading
+          h3.mail-template__heading-title 起床メールを作成しました
+          .mail-template__heading-extra
+            a.mail-template__button-closeMailForm(
+              ng-click="toggleMailForm()",
+              nt-prevent-tap
+            )
+
+        .mail-template__text
+          p 選択ボタンをクリックするとテキストが選択されるので、コピーしてご利用ください。
+        .mail-template__textarea
+          textarea(nt-select-on-focus, nt-mail-template-str, readonly)
+        .mail-template__buttons
+          a.mail-template__button-select(nt-select-on-click) テキストを選択する
+
+    #foot
+      .bar.bar-tab
+        a.tab-item(data-href="#/")
+          span.icon.icon-home
+          span.tab-label メンバー
+        a.tab-item(data-href="#/team/")
+          span.icon.icon-list
+          span.tab-label チーム分け
+        a.tab-item(data-href="#/spy/")
+          span.icon.icon-person
+          span.tab-label スパイ戦
+
+    script(src="//cdn.jsdelivr.net/ratchet/2.0.2/js/ratchet.min.js")
     script(src="js/app.js")
 

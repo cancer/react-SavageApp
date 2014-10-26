@@ -1,0 +1,110 @@
+//メンバー
+.members {}
+//# メンバーリスト
+.members-list {
+  @extend .table-view;
+}
+//メンバーリストの各行
+.members-list__member {
+  @extend .table-view-cell;
+  padding-right: 11px;
+}
+//メンバーの概要
+.member-summary {
+  display: table;
+  width: 100%;
+}
+//名前
+.member-summary__name {
+  display: table-cell;
+  width: 25%;
+  vertical-align: middle;
+}
+//参加状態と編集ボタン
+.member-summary__status {
+  display: table-cell;
+  text-align: right;
+  vertical-align: middle;
+}
+.member-summary__action {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 10px;
+}
+//参加状態の切り替えボタン
+.checkbox {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.checkbox__check {
+  display: none;
+}
+.checkbox__text {
+  display: inline-block;
+  width: 60px;
+  padding: 2px 4px;
+  border: 1px solid;
+  font-size: 12px;
+  -webkit-transition: 0.3s all linear;
+  transition: 0.3s all linear;
+  border-radius: 3px;
+  input + & {
+    color: #ccc;
+    &:before {
+      content: "不参加";
+    }
+  }
+  input[checked="checked"] + & {
+    color: #5cb85c;
+    background-color: currentColor;
+    &:before{
+      color: #fff;
+      content: "参加";
+    }
+  }
+}
+//編集ボタン
+.members-summary__btn-edit {
+  @extend .btn;
+}
+.members__btn-changeTeam {
+  @extend .btn;
+  @extend .btn-outlined;
+}
+//メンバーの編集
+.member-edit {
+}
+//メンバー編集フォームの各行
+.member-edit__name {
+  display: table;
+  width: 100%;
+  margin-bottom: 20px;
+}
+//メンバー編集フォームのラベル
+.member-edit__name__label {
+  display: table-cell;
+  width: 25%;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+//メンバー編集フォームの値
+.member-edit__name__value {
+  display: table-cell;
+  input[type="text"] {
+    margin-bottom: 0;
+  }
+}
+//メンバー編集フォームのボタン
+.member-edit__action {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.member-edit__action__btn {
+  display: table-cell;
+  padding: 0 5px;
+}
+
