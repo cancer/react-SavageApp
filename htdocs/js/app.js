@@ -190,7 +190,7 @@ React = require('react/react');
 
 MailTemplate = React.createClass({
   render: function() {
-    return React.createElement(React.DOM.div, null, "Mail template");
+    return React.createElement(React.DOM.div, null);
   }
 });
 
