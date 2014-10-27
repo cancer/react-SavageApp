@@ -1,34 +1,20 @@
 # @cjsx React.DOM 
 
-React         = require 'react/react'
-MemberSummary = require './summary.cjsx'
-MemberEdit    = require './edit.cjsx'
+React          = require 'react/react'
+MembersListRow = require './row.cjsx'
 
-MembersList = React.createClass
-  getInitialState: ->
-    return {
-      isEdit: false
-    }
-
-  handleEdit: ->
-      @setState isEdit: !@state.isEdit
-
+module.exports = React.createClass
   render: ->
     BEMElement =
-      listItem: "#{@props.className}__member"
+      row: "#{@props.className}__member"
 
     rows = []
     @props.members.forEach (member) =>
       rows.push(
-        <li className={BEMElement.listItem}>
-          <MemberSummary className="member-summary" member={member} onMemberEdit={@handleEdit} />
-          <MemberEdit className="member-edit" member={member} visible={@state.isEdit} />
-        </li>
+        <MembersListRow className={BEMElement.row} member={member} />
       )
 
     <ul className={@props.className}>
       {rows}
     </ul>
-
-module.exports = MembersList
 

@@ -7,6 +7,14 @@
     {
       "name": "geckotang",
       "isAwaken": false
+    },
+    {
+      "name": "gundam",
+      "isAwaken": false
+    },
+    {
+      "name": "chalo",
+      "isAwaken": true
     }
   ]
 }
