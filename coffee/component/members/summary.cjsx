@@ -3,6 +3,9 @@
 React = require 'react/react'
 
 MemberSummary = React.createClass
+  handleEdit: ->
+    @props.onMemberEdit()
+
   render: ->
     className = @props.className
     BEMElement =
@@ -19,7 +22,7 @@ MemberSummary = React.createClass
           <div className={BEMElement.checkbox} />
         </div>
         <div className={BEMElement.statusAction}>
-          <a className={BEMElement.btnEdit}>編集</a>
+          <a className={BEMElement.btnEdit} onClick={@handleEdit}>編集</a>
         </div>
       </div>
     </div>
