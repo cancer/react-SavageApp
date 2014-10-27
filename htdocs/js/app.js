@@ -56,7 +56,9 @@ module.exports = Api;
 
 
 },{"jquery":11}],3:[function(require,module,exports){
-var $, Api, MailTemplate, MemberAdd, Members, MembersList, React, _;
+var MailTemplate, MemberAdd, Members, MembersList, React, _;
+
+_ = require('underscore');
 
 React = require('react/react');
 
@@ -66,27 +68,7 @@ MembersList = require('./members/list.cjsx');
 
 MailTemplate = require('./members/mail.cjsx');
 
-Api = require('../api.coffee');
-
-$ = require('jquery');
-
-_ = require('underscore');
-
 Members = React.createClass({
-  getInitialState: function() {
-    return {
-      members: []
-    };
-  },
-  componentDidMount: function() {
-    return Api.members.get().done((function(_this) {
-      return function(data) {
-        return _this.setState({
-          members: data.members
-        });
-      };
-    })(this));
-  },
   render: function() {
     return React.createElement(React.DOM.div, {
       "className": "members"
@@ -99,8 +81,7 @@ Members = React.createClass({
     }, "\u30b5\u30d0\u30b2\u90e8\u306e\u30e1\u30f3\u30d0\u30fc\u3092\u7ba1\u7406\u3067\u304d\u307e\u3059"), React.createElement(MemberAdd, {
       "className": "member-add"
     }), React.createElement(MembersList, {
-      "className": "members-list",
-      "members": this.state.members
+      "className": "members-list"
     }), React.createElement(MailTemplate, null));
   }
 });
@@ -109,7 +90,7 @@ module.exports = Members;
 
 
 
-},{"../api.coffee":2,"./members/add.cjsx":4,"./members/list.cjsx":6,"./members/mail.cjsx":7,"jquery":11,"react/react":171,"underscore":172}],4:[function(require,module,exports){
+},{"./members/add.cjsx":4,"./members/list.cjsx":6,"./members/mail.cjsx":7,"react/react":171,"underscore":172}],4:[function(require,module,exports){
 var MemberAdd, React;
 
 React = require('react/react');
@@ -131,11 +112,25 @@ module.exports = MemberAdd;
 
 
 },{"react/react":171}],5:[function(require,module,exports){
-var MemberEdit, React;
+var React;
 
 React = require('react/addons');
 
-MemberEdit = React.createClass({
+module.exports = React.createClass({
+  handleSave: function() {
+    this.props.onSave({
+      name: this.refs.name.getDOMNode().value.trim(),
+      oldName: this.props.member.name
+    });
+    return this.handleClose();
+  },
+  handleDelete: function() {
+    this.props.onDelete(this.props.member);
+    return this.handleClose();
+  },
+  handleClose: function() {
+    return this.props.onClose();
+  },
   render: function() {
     var BEMElement, className, classSet, _classes;
     className = this.props.className;
@@ -163,23 +158,27 @@ MemberEdit = React.createClass({
       "className": BEMElement.nameValue
     }, React.createElement(React.DOM.input, {
       "type": "text",
-      "value": this.props.member.name
+      "defaultValue": this.props.member.name,
+      "ref": "name"
     }))), React.createElement(React.DOM.div, {
       "className": BEMElement.action
     }, React.createElement(React.DOM.div, {
       "className": BEMElement.actionBtnForSave
     }, React.createElement(React.DOM.a, {
-      "className": "btn btn-positive btn-block btn-outlined"
+      "className": "btn btn-positive btn-block btn-outlined",
+      "onClick": this.handleSave
     }, React.createElement(React.DOM.i, {
       "className": "icon icon-edit"
     }))), React.createElement(React.DOM.div, {
       "className": BEMElement.actionBtnForDelete
     }, React.createElement(React.DOM.a, {
-      "className": "btn btn-negative btn-block btn-outlined"
+      "className": "btn btn-negative btn-block btn-outlined",
+      "onClick": this.handleDelete
     }, React.createElement(React.DOM.i, {
       "className": "icon icon-trash"
     }))), React.createElement(React.DOM.div, {
-      "className": BEMElement.actionBtnForClose
+      "className": BEMElement.actionBtnForClose,
+      "onClick": this.handleClose
     }, React.createElement(React.DOM.a, {
       "className": "btn btn-block btn-outlined"
     }, React.createElement(React.DOM.i, {
@@ -188,29 +187,68 @@ MemberEdit = React.createClass({
   }
 });
 
-module.exports = MemberEdit;
-
 
 
 },{"react/addons":12}],6:[function(require,module,exports){
-var MembersListRow, React;
+var Api, MembersList, MembersListRow, React, _;
+
+_ = require('underscore');
 
 React = require('react/react');
 
 MembersListRow = require('./row.cjsx');
 
-module.exports = React.createClass({
+Api = require('../../api.coffee');
+
+MembersList = React.createClass({
+  getInitialState: function() {
+    return {
+      members: []
+    };
+  },
+  componentDidMount: function() {
+    return Api.members.get().done((function(_this) {
+      return function(data) {
+        return _this.setState({
+          members: data
+        });
+      };
+    })(this));
+  },
+  handleMemberEdit: function(member, oldName) {
+    var _members;
+    _members = [];
+    this.state.members.forEach(function(val) {
+      if (val.name === oldName) {
+        return _members.push(_.extend({}, val, member));
+      } else {
+        return _members.push(val);
+      }
+    });
+    return this.setState({
+      members: _members
+    });
+  },
+  handleMemberDelete: function(member) {
+    var _members;
+    _members = _.without(this.state.members, member);
+    return this.setState({
+      members: _members
+    });
+  },
   render: function() {
     var BEMElement, rows;
     BEMElement = {
       row: "" + this.props.className + "__member"
     };
     rows = [];
-    this.props.members.forEach((function(_this) {
+    this.state.members.forEach((function(_this) {
       return function(member) {
         return rows.push(React.createElement(MembersListRow, {
           "className": BEMElement.row,
-          "member": member
+          "member": member,
+          "onMemberDelete": _this.handleMemberDelete,
+          "onMemberEdit": _this.handleMemberEdit
         }));
       };
     })(this));
@@ -220,9 +258,11 @@ module.exports = React.createClass({
   }
 });
 
+module.exports = MembersList;
 
 
-},{"./row.cjsx":8,"react/react":171}],7:[function(require,module,exports){
+
+},{"../../api.coffee":2,"./row.cjsx":8,"react/react":171,"underscore":172}],7:[function(require,module,exports){
 var MailTemplate, React;
 
 React = require('react/react');
@@ -238,7 +278,9 @@ module.exports = MailTemplate;
 
 
 },{"react/react":171}],8:[function(require,module,exports){
-var MemberEdit, MemberSummary, React;
+var MemberEdit, MemberSummary, MembersListRow, React, _;
+
+_ = require('underscore');
 
 React = require('react/react');
 
@@ -246,7 +288,7 @@ MemberSummary = require('./summary.cjsx');
 
 MemberEdit = require('./edit.cjsx');
 
-module.exports = React.createClass({
+MembersListRow = React.createClass({
   getInitialState: function() {
     return {
       isEdit: false
@@ -257,7 +299,24 @@ module.exports = React.createClass({
       isEdit: !this.state.isEdit
     });
   },
+  handleSave: function(args) {
+    var _member, _oldName;
+    _oldName = args.oldName;
+    _member = _.extend({}, this.props.member, {
+      name: args.name
+    });
+    return this.props.onMemberEdit(_member, _oldName);
+  },
+  handleDelete: function(member) {
+    return console.log('Now, can not delete member.');
+  },
+  handleClose: function() {
+    return this.setState({
+      isEdit: false
+    });
+  },
   render: function() {
+    console.log(this.props.member);
     return React.createElement(React.DOM.li, {
       "className": this.props.className
     }, React.createElement(MemberSummary, {
@@ -267,14 +326,19 @@ module.exports = React.createClass({
     }), React.createElement(MemberEdit, {
       "className": "member-edit",
       "member": this.props.member,
-      "visible": this.state.isEdit
+      "visible": this.state.isEdit,
+      "onSave": this.handleSave,
+      "onDelete": this.handleDelete,
+      "onClose": this.handleClose
     }));
   }
 });
 
+module.exports = MembersListRow;
 
 
-},{"./edit.cjsx":5,"./summary.cjsx":9,"react/react":171}],9:[function(require,module,exports){
+
+},{"./edit.cjsx":5,"./summary.cjsx":9,"react/react":171,"underscore":172}],9:[function(require,module,exports){
 var MemberSummary, React;
 
 React = require('react/react');

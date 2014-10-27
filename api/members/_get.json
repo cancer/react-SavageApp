@@ -1,20 +1,18 @@
-{
-  "members": [
-    {
-      "name": "cancer",
-      "isAwaken": true
-    },
-    {
-      "name": "geckotang",
-      "isAwaken": false
-    },
-    {
-      "name": "gundam",
-      "isAwaken": false
-    },
-    {
-      "name": "chalo",
-      "isAwaken": true
-    }
-  ]
-}
+[
+  {
+    "name": "cancer",
+    "isAwaken": true
+  },
+  {
+    "name": "geckotang",
+    "isAwaken": false
+  },
+  {
+    "name": "gundam",
+    "isAwaken": false
+  },
+  {
+    "name": "chalo",
+    "isAwaken": true
+  }
+]
