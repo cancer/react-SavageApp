@@ -50,18 +50,20 @@ gulp.task 'server', ->
       livereload: true
       directoryListing: false
       proxies: [
-        source: "/api/members"
-        target: "localhost:3000/members"
+        {
+          source: "/api/members"
+          target: "http://localhost:3000/api/members"
+        }
       ]
       #middleware: (connect, o) ->
       #  return ->
-      #    options = url.parse 'http"://localhost:3000/test'
-      #    options.root = '/test'
+      #    options = url.parse 'http"://localhost:3000/'
+      #    options.root = '/'
       #    proxy options
 
 gulp.task 'stubcell', ->
   stubcell.start
-    entry: 'api/entry.yml'
+    entry: './api/entry.yml'
     port: 3000
 
 gulp.task 'watch', ->
