@@ -13,57 +13,6 @@ html(lang="ja")
         h1.head__title.title SavageApp
 
     #main.content.content-padded
-      .members
-        .members-headline
-          h2.members-headline__title メンバーリスト
-
-          p.members-headline__lead サバゲ部のメンバーを管理できます
-
-        .add-new-member
-          a.btn.btn-primary.btn-block.btn-outlined
-            .icon(class="icon-plus") メンバー追加
-
-        ul.members-list
-          li.members-list__member
-            .member-summary
-              .member-summary__name
-              .member-summary__status
-                .member-summary__status__action
-                  .member-summary__checkbox
-                .member-summary__status__action
-                  a.member-summary__btn-edit 編集
-            .member-edit
-              .member-edit__name
-                .member-edit__name__label 名前
-                .member-edit__name__value
-                  input(type="text")
-              .member-edit__action
-                .member-edit__action__btn.member-edit__action__btn--save
-                  a.btn.btn-positive.btn-block.btn-outlined
-                    .icon.icon-edit
-                .member-edit__action__btn.member-edit__action__btn--delete
-                  a.btn.btn-negative.btn-block.btn-outlined
-                    .icon.icon-trash
-                .member-edit__action__btn.member-edit__action__btn--close
-                  a.btn.btn.btn-block.btn-outlined
-                    .icon.icon-close
-
-      .mail-template
-        a.mail-template__button-create
-          span 起床メール作成
-
-        .mail-template
-          .mail-template__heading
-            h3.mail-template__heading-title 起床メールを作成しました
-            .mail-template__heading-extra
-              a.mail-template__button-closeMailForm
-
-          .mail-template__text
-            p 選択ボタンをクリックするとテキストが選択されるので、コピーしてご利用ください。
-          .mail-template__textarea
-            textarea(readonly)
-          .mail-template__buttons
-            a.mail-template__button-select テキストを選択する
 
     #foot
       .bar.bar-tab
