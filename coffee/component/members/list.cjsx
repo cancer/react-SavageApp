@@ -30,14 +30,14 @@ MembersList = React.createClass
     # TODO: API request to delete member
 
   render: ->
-    BEMElement =
+    bemClassName =
       row: "#{@props.className}__member"
 
     rows = []
     @state.members.forEach (member) =>
       rows.push(
         <MembersListRow 
-          className={BEMElement.row}
+          className={bemClassName.row}
           member={member}
           onMemberDelete={@handleMemberDelete}
           onMemberEdit={@handleMemberEdit}

@@ -8,7 +8,7 @@ MemberSummary = React.createClass
 
   render: ->
     className = @props.className
-    BEMElement =
+    bemClassName =
       name         : "#{className}__name"
       status       : "#{className}__status"
       statusAction : "#{className}__status__action"
@@ -16,13 +16,13 @@ MemberSummary = React.createClass
       btnEdit      : "#{className}__btn-edit"
 
     <div className={className}>
-      <div className={BEMElement.name}>{@props.member.name}</div>
-      <div className={BEMElement.status}>
-        <div className={BEMElement.statusAction}>
-          <div className={BEMElement.checkbox} />
+      <div className={bemClassName.name}>{@props.member.name}</div>
+      <div className={bemClassName.status}>
+        <div className={bemClassName.statusAction}>
+          <div className={bemClassName.checkbox} />
         </div>
-        <div className={BEMElement.statusAction}>
-          <a className={BEMElement.btnEdit} onClick={@handleEdit}>編集</a>
+        <div className={bemClassName.statusAction}>
+          <a className={bemClassName.btnEdit} onClick={@handleEdit}>編集</a>
         </div>
       </div>
     </div>

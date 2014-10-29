@@ -1,28 +1,12 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var MEMBERS, Members, React;
+var Members, React;
 
 React = require('react');
 
 Members = require('./component/members.cjsx');
 
-MEMBERS = [
-  {
-    "name": "cacner",
-    "isAwaken": true
-  }, {
-    "name": "geckotang",
-    "isAwaken": false
-  }, {
-    "name": "gundam",
-    "isAwaken": true
-  }, {
-    "name": "chalo",
-    "isAwaken": false
-  }
-];
-
 React.renderComponent(React.createElement(Members, {
-  "members": MEMBERS
+  "className": "members"
 }), document.getElementById('main'));
 
 
@@ -70,18 +54,27 @@ MailTemplate = require('./members/mail.cjsx');
 
 Members = React.createClass({
   render: function() {
+    var bemClassName, className;
+    className = this.props.className;
+    bemClassName = {
+      headline: "" + className + "-headline",
+      headlineTitle: "" + className + "-headline__title",
+      headlineLead: "" + className + "-headline__lead",
+      add: "" + className + "-add",
+      list: "" + className + "__list"
+    };
     return React.createElement(React.DOM.div, {
-      "className": "members"
+      "className": className
     }, React.createElement(React.DOM.div, {
-      "className": "members-headline"
+      "className": bemClassName.headline
     }, React.createElement(React.DOM.h2, {
-      "className": "members-headline__title"
+      "className": bemClassName.headlineTitle
     }, "\u30e1\u30f3\u30d0\u30fc\u30ea\u30b9\u30c8")), React.createElement(React.DOM.p, {
-      "className": "members-headline__lead"
+      "className": bemClassName.headlineLead
     }, "\u30b5\u30d0\u30b2\u90e8\u306e\u30e1\u30f3\u30d0\u30fc\u3092\u7ba1\u7406\u3067\u304d\u307e\u3059"), React.createElement(MemberAdd, {
-      "className": "member-add"
+      "className": bemClassName.add
     }), React.createElement(MembersList, {
-      "className": "members-list"
+      "className": bemClassName.list
     }), React.createElement(MailTemplate, null));
   }
 });
@@ -132,9 +125,9 @@ module.exports = React.createClass({
     return this.props.onClose();
   },
   render: function() {
-    var BEMElement, className, classSet, _classes;
+    var bemClassName, className, classSet, _classes;
     className = this.props.className;
-    BEMElement = {
+    bemClassName = {
       name: "" + className + "__name",
       nameLabel: "" + className + "__name__label",
       nameValue: "" + className + "__name__value",
@@ -151,33 +144,33 @@ module.exports = React.createClass({
     return React.createElement(React.DOM.div, {
       "className": classSet
     }, React.createElement(React.DOM.div, {
-      "className": BEMElement.name
+      "className": bemClassName.name
     }, React.createElement(React.DOM.div, {
-      "className": BEMElement.nameLabel
+      "className": bemClassName.nameLabel
     }, "\u540d\u524d"), React.createElement(React.DOM.div, {
-      "className": BEMElement.nameValue
+      "className": bemClassName.nameValue
     }, React.createElement(React.DOM.input, {
       "type": "text",
       "defaultValue": this.props.member.name,
       "ref": "name"
     }))), React.createElement(React.DOM.div, {
-      "className": BEMElement.action
+      "className": bemClassName.action
     }, React.createElement(React.DOM.div, {
-      "className": BEMElement.actionBtnForSave
+      "className": bemClassName.actionBtnForSave
     }, React.createElement(React.DOM.a, {
       "className": "btn btn-positive btn-block btn-outlined",
       "onClick": this.handleSave
     }, React.createElement(React.DOM.i, {
       "className": "icon icon-edit"
     }))), React.createElement(React.DOM.div, {
-      "className": BEMElement.actionBtnForDelete
+      "className": bemClassName.actionBtnForDelete
     }, React.createElement(React.DOM.a, {
       "className": "btn btn-negative btn-block btn-outlined",
       "onClick": this.handleDelete
     }, React.createElement(React.DOM.i, {
       "className": "icon icon-trash"
     }))), React.createElement(React.DOM.div, {
-      "className": BEMElement.actionBtnForClose,
+      "className": bemClassName.actionBtnForClose,
       "onClick": this.handleClose
     }, React.createElement(React.DOM.a, {
       "className": "btn btn-block btn-outlined"
@@ -237,15 +230,15 @@ MembersList = React.createClass({
     });
   },
   render: function() {
-    var BEMElement, rows;
-    BEMElement = {
+    var bemClassName, rows;
+    bemClassName = {
       row: "" + this.props.className + "__member"
     };
     rows = [];
     this.state.members.forEach((function(_this) {
       return function(member) {
         return rows.push(React.createElement(MembersListRow, {
-          "className": BEMElement.row,
+          "className": bemClassName.row,
           "member": member,
           "onMemberDelete": _this.handleMemberDelete,
           "onMemberEdit": _this.handleMemberEdit
@@ -348,9 +341,9 @@ MemberSummary = React.createClass({
     return this.props.onMemberEdit();
   },
   render: function() {
-    var BEMElement, className;
+    var bemClassName, className;
     className = this.props.className;
-    BEMElement = {
+    bemClassName = {
       name: "" + className + "__name",
       status: "" + className + "__status",
       statusAction: "" + className + "__status__action",
@@ -360,17 +353,17 @@ MemberSummary = React.createClass({
     return React.createElement(React.DOM.div, {
       "className": className
     }, React.createElement(React.DOM.div, {
-      "className": BEMElement.name
+      "className": bemClassName.name
     }, this.props.member.name), React.createElement(React.DOM.div, {
-      "className": BEMElement.status
+      "className": bemClassName.status
     }, React.createElement(React.DOM.div, {
-      "className": BEMElement.statusAction
+      "className": bemClassName.statusAction
     }, React.createElement(React.DOM.div, {
-      "className": BEMElement.checkbox
+      "className": bemClassName.checkbox
     })), React.createElement(React.DOM.div, {
-      "className": BEMElement.statusAction
+      "className": bemClassName.statusAction
     }, React.createElement(React.DOM.a, {
-      "className": BEMElement.btnEdit,
+      "className": bemClassName.btnEdit,
       "onClick": this.handleEdit
     }, "\u7de8\u96c6"))));
   }

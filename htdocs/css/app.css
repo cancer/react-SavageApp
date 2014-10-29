@@ -763,26 +763,26 @@ input[type="button"] {
   border-radius: 6px;
 }
 
-.card .table-view, .card .members-list {
+.card .table-view, .card .members__list {
   margin-bottom: 0;
   border-top: 0;
   border-bottom: 0;
 }
-.card .table-view .table-view-divider:first-child, .card .members-list .table-view-divider:first-child {
+.card .table-view .table-view-divider:first-child, .card .members__list .table-view-divider:first-child {
   top: 0;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
-.card .table-view .table-view-divider:last-child, .card .members-list .table-view-divider:last-child {
+.card .table-view .table-view-divider:last-child, .card .members__list .table-view-divider:last-child {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
 }
 
-.card .table-view-cell:last-child, .card .members-list__member:last-child {
+.card .table-view-cell:last-child, .card .members__list__member:last-child {
   border-bottom: 0;
 }
 
-.table-view, .members-list {
+.table-view, .members__list {
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 15px;
@@ -792,16 +792,16 @@ input[type="button"] {
   border-bottom: 1px solid #dddddd;
 }
 
-.table-view-cell, .members-list__member {
+.table-view-cell, .members__list__member {
   position: relative;
   padding: 11px 65px 11px 15px;
   overflow: hidden;
   border-bottom: 1px solid #dddddd;
 }
-.table-view-cell:last-child, .members-list__member:last-child {
+.table-view-cell:last-child, .members__list__member:last-child {
   border-bottom: 0;
 }
-.table-view-cell > a:not(.btn), .members-list__member > a:not(.btn) {
+.table-view-cell > a:not(.btn), .members__list__member > a:not(.btn) {
   position: relative;
   display: block;
   padding: inherit;
@@ -809,10 +809,10 @@ input[type="button"] {
   overflow: hidden;
   color: inherit;
 }
-.table-view-cell > a:not(.btn):active, .members-list__member > a:not(.btn):active {
+.table-view-cell > a:not(.btn):active, .members__list__member > a:not(.btn):active {
   background-color: #eee;
 }
-.table-view-cell p, .members-list__member p {
+.table-view-cell p, .members__list__member p {
   margin-bottom: 0;
 }
 
@@ -829,62 +829,62 @@ input[type="button"] {
   border-bottom: 1px solid #dddddd;
 }
 
-.table-view .media, .members-list .media,
+.table-view .media, .members__list .media,
 .table-view .media-body,
-.members-list .media-body {
+.members__list .media-body {
   overflow: hidden;
 }
 
-.table-view .media-object.pull-left, .members-list .media-object.pull-left {
+.table-view .media-object.pull-left, .members__list .media-object.pull-left {
   margin-right: 10px;
 }
-.table-view .media-object.pull-right, .members-list .media-object.pull-right {
+.table-view .media-object.pull-right, .members__list .media-object.pull-right {
   margin-left: 10px;
 }
 
-.table-view-cell > .btn, .members-list__member > .btn, .table-view-cell > .member-summary__btn-edit, .members-list__member > .member-summary__btn-edit, .table-view-cell > .members__btn-changeTeam, .members-list__member > .members__btn-changeTeam, .table-view-cell > .division__btn, .members-list__member > .division__btn, .table-view-cell > .division__btn-submit, .members-list__member > .division__btn-submit, .table-view-cell > .division__btn-cancel, .members-list__member > .division__btn-cancel, .table-view-cell > .spy-buttons__btn-show, .members-list__member > .spy-buttons__btn-show, .table-view-cell > .spy-buttons__btn-assign, .members-list__member > .spy-buttons__btn-assign, .table-view-cell > .spy-buttons__btn-next, .members-list__member > .spy-buttons__btn-next, .table-view-cell > .spy-buttons__btn-cancel, .members-list__member > .spy-buttons__btn-cancel, .table-view-cell > .spy-buttons__btn-check, .members-list__member > .spy-buttons__btn-check, .table-view-cell > .spy-modal__btn-show, .members-list__member > .spy-modal__btn-show, .table-view-cell > .spy-modal__btn-next, .members-list__member > .spy-modal__btn-next, .table-view-cell > .spy-modal__btn-assign, .members-list__member > .spy-modal__btn-assign, .table-view-cell > .spy-modal__btn-cancel, .members-list__member > .spy-modal__btn-cancel, .table-view-cell > .mail-template__button-select, .members-list__member > .mail-template__button-select, .table-view-cell > .mail-template__button-create, .members-list__member > .mail-template__button-create,
+.table-view-cell > .btn, .members__list__member > .btn, .table-view-cell > .member-summary__btn-edit, .members__list__member > .member-summary__btn-edit, .table-view-cell > .members__btn-changeTeam, .members__list__member > .members__btn-changeTeam, .table-view-cell > .division__btn, .members__list__member > .division__btn, .table-view-cell > .division__btn-submit, .members__list__member > .division__btn-submit, .table-view-cell > .division__btn-cancel, .members__list__member > .division__btn-cancel, .table-view-cell > .spy-buttons__btn-show, .members__list__member > .spy-buttons__btn-show, .table-view-cell > .spy-buttons__btn-assign, .members__list__member > .spy-buttons__btn-assign, .table-view-cell > .spy-buttons__btn-next, .members__list__member > .spy-buttons__btn-next, .table-view-cell > .spy-buttons__btn-cancel, .members__list__member > .spy-buttons__btn-cancel, .table-view-cell > .spy-buttons__btn-check, .members__list__member > .spy-buttons__btn-check, .table-view-cell > .spy-modal__btn-show, .members__list__member > .spy-modal__btn-show, .table-view-cell > .spy-modal__btn-next, .members__list__member > .spy-modal__btn-next, .table-view-cell > .spy-modal__btn-assign, .members__list__member > .spy-modal__btn-assign, .table-view-cell > .spy-modal__btn-cancel, .members__list__member > .spy-modal__btn-cancel, .table-view-cell > .mail-template__button-select, .members__list__member > .mail-template__button-select, .table-view-cell > .mail-template__button-create, .members__list__member > .mail-template__button-create,
 .table-view-cell > .badge,
-.members-list__member > .badge,
+.members__list__member > .badge,
 .table-view-cell > .toggle,
-.members-list__member > .toggle,
+.members__list__member > .toggle,
 .table-view-cell > a > .btn,
-.members-list__member > a > .btn,
+.members__list__member > a > .btn,
 .table-view-cell > a > .member-summary__btn-edit,
-.members-list__member > a > .member-summary__btn-edit,
+.members__list__member > a > .member-summary__btn-edit,
 .table-view-cell > a > .members__btn-changeTeam,
-.members-list__member > a > .members__btn-changeTeam,
+.members__list__member > a > .members__btn-changeTeam,
 .table-view-cell > a > .division__btn,
-.members-list__member > a > .division__btn,
+.members__list__member > a > .division__btn,
 .table-view-cell > a > .division__btn-submit,
-.members-list__member > a > .division__btn-submit,
+.members__list__member > a > .division__btn-submit,
 .table-view-cell > a > .division__btn-cancel,
-.members-list__member > a > .division__btn-cancel,
+.members__list__member > a > .division__btn-cancel,
 .table-view-cell > a > .spy-buttons__btn-show,
-.members-list__member > a > .spy-buttons__btn-show,
+.members__list__member > a > .spy-buttons__btn-show,
 .table-view-cell > a > .spy-buttons__btn-assign,
-.members-list__member > a > .spy-buttons__btn-assign,
+.members__list__member > a > .spy-buttons__btn-assign,
 .table-view-cell > a > .spy-buttons__btn-next,
-.members-list__member > a > .spy-buttons__btn-next,
+.members__list__member > a > .spy-buttons__btn-next,
 .table-view-cell > a > .spy-buttons__btn-cancel,
-.members-list__member > a > .spy-buttons__btn-cancel,
+.members__list__member > a > .spy-buttons__btn-cancel,
 .table-view-cell > a > .spy-buttons__btn-check,
-.members-list__member > a > .spy-buttons__btn-check,
+.members__list__member > a > .spy-buttons__btn-check,
 .table-view-cell > a > .spy-modal__btn-show,
-.members-list__member > a > .spy-modal__btn-show,
+.members__list__member > a > .spy-modal__btn-show,
 .table-view-cell > a > .spy-modal__btn-next,
-.members-list__member > a > .spy-modal__btn-next,
+.members__list__member > a > .spy-modal__btn-next,
 .table-view-cell > a > .spy-modal__btn-assign,
-.members-list__member > a > .spy-modal__btn-assign,
+.members__list__member > a > .spy-modal__btn-assign,
 .table-view-cell > a > .spy-modal__btn-cancel,
-.members-list__member > a > .spy-modal__btn-cancel,
+.members__list__member > a > .spy-modal__btn-cancel,
 .table-view-cell > a > .mail-template__button-select,
-.members-list__member > a > .mail-template__button-select,
+.members__list__member > a > .mail-template__button-select,
 .table-view-cell > a > .mail-template__button-create,
-.members-list__member > a > .mail-template__button-create,
+.members__list__member > a > .mail-template__button-create,
 .table-view-cell > a > .badge,
-.members-list__member > a > .badge,
+.members__list__member > a > .badge,
 .table-view-cell > a > .toggle,
-.members-list__member > a > .toggle {
+.members__list__member > a > .toggle {
   position: absolute;
   top: 50%;
   right: 15px;
@@ -892,281 +892,281 @@ input[type="button"] {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-.table-view-cell .navigate-left > .btn, .members-list__member .navigate-left > .btn, .table-view-cell .navigate-left > .member-summary__btn-edit, .members-list__member .navigate-left > .member-summary__btn-edit, .table-view-cell .navigate-left > .members__btn-changeTeam, .members-list__member .navigate-left > .members__btn-changeTeam, .table-view-cell .navigate-left > .division__btn, .members-list__member .navigate-left > .division__btn, .table-view-cell .navigate-left > .division__btn-submit, .members-list__member .navigate-left > .division__btn-submit, .table-view-cell .navigate-left > .division__btn-cancel, .members-list__member .navigate-left > .division__btn-cancel, .table-view-cell .navigate-left > .spy-buttons__btn-show, .members-list__member .navigate-left > .spy-buttons__btn-show, .table-view-cell .navigate-left > .spy-buttons__btn-assign, .members-list__member .navigate-left > .spy-buttons__btn-assign, .table-view-cell .navigate-left > .spy-buttons__btn-next, .members-list__member .navigate-left > .spy-buttons__btn-next, .table-view-cell .navigate-left > .spy-buttons__btn-cancel, .members-list__member .navigate-left > .spy-buttons__btn-cancel, .table-view-cell .navigate-left > .spy-buttons__btn-check, .members-list__member .navigate-left > .spy-buttons__btn-check, .table-view-cell .navigate-left > .spy-modal__btn-show, .members-list__member .navigate-left > .spy-modal__btn-show, .table-view-cell .navigate-left > .spy-modal__btn-next, .members-list__member .navigate-left > .spy-modal__btn-next, .table-view-cell .navigate-left > .spy-modal__btn-assign, .members-list__member .navigate-left > .spy-modal__btn-assign, .table-view-cell .navigate-left > .spy-modal__btn-cancel, .members-list__member .navigate-left > .spy-modal__btn-cancel, .table-view-cell .navigate-left > .mail-template__button-select, .members-list__member .navigate-left > .mail-template__button-select, .table-view-cell .navigate-left > .mail-template__button-create, .members-list__member .navigate-left > .mail-template__button-create,
+.table-view-cell .navigate-left > .btn, .members__list__member .navigate-left > .btn, .table-view-cell .navigate-left > .member-summary__btn-edit, .members__list__member .navigate-left > .member-summary__btn-edit, .table-view-cell .navigate-left > .members__btn-changeTeam, .members__list__member .navigate-left > .members__btn-changeTeam, .table-view-cell .navigate-left > .division__btn, .members__list__member .navigate-left > .division__btn, .table-view-cell .navigate-left > .division__btn-submit, .members__list__member .navigate-left > .division__btn-submit, .table-view-cell .navigate-left > .division__btn-cancel, .members__list__member .navigate-left > .division__btn-cancel, .table-view-cell .navigate-left > .spy-buttons__btn-show, .members__list__member .navigate-left > .spy-buttons__btn-show, .table-view-cell .navigate-left > .spy-buttons__btn-assign, .members__list__member .navigate-left > .spy-buttons__btn-assign, .table-view-cell .navigate-left > .spy-buttons__btn-next, .members__list__member .navigate-left > .spy-buttons__btn-next, .table-view-cell .navigate-left > .spy-buttons__btn-cancel, .members__list__member .navigate-left > .spy-buttons__btn-cancel, .table-view-cell .navigate-left > .spy-buttons__btn-check, .members__list__member .navigate-left > .spy-buttons__btn-check, .table-view-cell .navigate-left > .spy-modal__btn-show, .members__list__member .navigate-left > .spy-modal__btn-show, .table-view-cell .navigate-left > .spy-modal__btn-next, .members__list__member .navigate-left > .spy-modal__btn-next, .table-view-cell .navigate-left > .spy-modal__btn-assign, .members__list__member .navigate-left > .spy-modal__btn-assign, .table-view-cell .navigate-left > .spy-modal__btn-cancel, .members__list__member .navigate-left > .spy-modal__btn-cancel, .table-view-cell .navigate-left > .mail-template__button-select, .members__list__member .navigate-left > .mail-template__button-select, .table-view-cell .navigate-left > .mail-template__button-create, .members__list__member .navigate-left > .mail-template__button-create,
 .table-view-cell .navigate-left > .badge,
-.members-list__member .navigate-left > .badge,
+.members__list__member .navigate-left > .badge,
 .table-view-cell .navigate-left > .toggle,
-.members-list__member .navigate-left > .toggle,
+.members__list__member .navigate-left > .toggle,
 .table-view-cell .navigate-right > .btn,
-.members-list__member .navigate-right > .btn,
+.members__list__member .navigate-right > .btn,
 .table-view-cell .navigate-right > .member-summary__btn-edit,
-.members-list__member .navigate-right > .member-summary__btn-edit,
+.members__list__member .navigate-right > .member-summary__btn-edit,
 .table-view-cell .navigate-right > .members__btn-changeTeam,
-.members-list__member .navigate-right > .members__btn-changeTeam,
+.members__list__member .navigate-right > .members__btn-changeTeam,
 .table-view-cell .navigate-right > .division__btn,
-.members-list__member .navigate-right > .division__btn,
+.members__list__member .navigate-right > .division__btn,
 .table-view-cell .navigate-right > .division__btn-submit,
-.members-list__member .navigate-right > .division__btn-submit,
+.members__list__member .navigate-right > .division__btn-submit,
 .table-view-cell .navigate-right > .division__btn-cancel,
-.members-list__member .navigate-right > .division__btn-cancel,
+.members__list__member .navigate-right > .division__btn-cancel,
 .table-view-cell .navigate-right > .spy-buttons__btn-show,
-.members-list__member .navigate-right > .spy-buttons__btn-show,
+.members__list__member .navigate-right > .spy-buttons__btn-show,
 .table-view-cell .navigate-right > .spy-buttons__btn-assign,
-.members-list__member .navigate-right > .spy-buttons__btn-assign,
+.members__list__member .navigate-right > .spy-buttons__btn-assign,
 .table-view-cell .navigate-right > .spy-buttons__btn-next,
-.members-list__member .navigate-right > .spy-buttons__btn-next,
+.members__list__member .navigate-right > .spy-buttons__btn-next,
 .table-view-cell .navigate-right > .spy-buttons__btn-cancel,
-.members-list__member .navigate-right > .spy-buttons__btn-cancel,
+.members__list__member .navigate-right > .spy-buttons__btn-cancel,
 .table-view-cell .navigate-right > .spy-buttons__btn-check,
-.members-list__member .navigate-right > .spy-buttons__btn-check,
+.members__list__member .navigate-right > .spy-buttons__btn-check,
 .table-view-cell .navigate-right > .spy-modal__btn-show,
-.members-list__member .navigate-right > .spy-modal__btn-show,
+.members__list__member .navigate-right > .spy-modal__btn-show,
 .table-view-cell .navigate-right > .spy-modal__btn-next,
-.members-list__member .navigate-right > .spy-modal__btn-next,
+.members__list__member .navigate-right > .spy-modal__btn-next,
 .table-view-cell .navigate-right > .spy-modal__btn-assign,
-.members-list__member .navigate-right > .spy-modal__btn-assign,
+.members__list__member .navigate-right > .spy-modal__btn-assign,
 .table-view-cell .navigate-right > .spy-modal__btn-cancel,
-.members-list__member .navigate-right > .spy-modal__btn-cancel,
+.members__list__member .navigate-right > .spy-modal__btn-cancel,
 .table-view-cell .navigate-right > .mail-template__button-select,
-.members-list__member .navigate-right > .mail-template__button-select,
+.members__list__member .navigate-right > .mail-template__button-select,
 .table-view-cell .navigate-right > .mail-template__button-create,
-.members-list__member .navigate-right > .mail-template__button-create,
+.members__list__member .navigate-right > .mail-template__button-create,
 .table-view-cell .navigate-right > .badge,
-.members-list__member .navigate-right > .badge,
+.members__list__member .navigate-right > .badge,
 .table-view-cell .navigate-right > .toggle,
-.members-list__member .navigate-right > .toggle,
+.members__list__member .navigate-right > .toggle,
 .table-view-cell .push-left > .btn,
-.members-list__member .push-left > .btn,
+.members__list__member .push-left > .btn,
 .table-view-cell .push-left > .member-summary__btn-edit,
-.members-list__member .push-left > .member-summary__btn-edit,
+.members__list__member .push-left > .member-summary__btn-edit,
 .table-view-cell .push-left > .members__btn-changeTeam,
-.members-list__member .push-left > .members__btn-changeTeam,
+.members__list__member .push-left > .members__btn-changeTeam,
 .table-view-cell .push-left > .division__btn,
-.members-list__member .push-left > .division__btn,
+.members__list__member .push-left > .division__btn,
 .table-view-cell .push-left > .division__btn-submit,
-.members-list__member .push-left > .division__btn-submit,
+.members__list__member .push-left > .division__btn-submit,
 .table-view-cell .push-left > .division__btn-cancel,
-.members-list__member .push-left > .division__btn-cancel,
+.members__list__member .push-left > .division__btn-cancel,
 .table-view-cell .push-left > .spy-buttons__btn-show,
-.members-list__member .push-left > .spy-buttons__btn-show,
+.members__list__member .push-left > .spy-buttons__btn-show,
 .table-view-cell .push-left > .spy-buttons__btn-assign,
-.members-list__member .push-left > .spy-buttons__btn-assign,
+.members__list__member .push-left > .spy-buttons__btn-assign,
 .table-view-cell .push-left > .spy-buttons__btn-next,
-.members-list__member .push-left > .spy-buttons__btn-next,
+.members__list__member .push-left > .spy-buttons__btn-next,
 .table-view-cell .push-left > .spy-buttons__btn-cancel,
-.members-list__member .push-left > .spy-buttons__btn-cancel,
+.members__list__member .push-left > .spy-buttons__btn-cancel,
 .table-view-cell .push-left > .spy-buttons__btn-check,
-.members-list__member .push-left > .spy-buttons__btn-check,
+.members__list__member .push-left > .spy-buttons__btn-check,
 .table-view-cell .push-left > .spy-modal__btn-show,
-.members-list__member .push-left > .spy-modal__btn-show,
+.members__list__member .push-left > .spy-modal__btn-show,
 .table-view-cell .push-left > .spy-modal__btn-next,
-.members-list__member .push-left > .spy-modal__btn-next,
+.members__list__member .push-left > .spy-modal__btn-next,
 .table-view-cell .push-left > .spy-modal__btn-assign,
-.members-list__member .push-left > .spy-modal__btn-assign,
+.members__list__member .push-left > .spy-modal__btn-assign,
 .table-view-cell .push-left > .spy-modal__btn-cancel,
-.members-list__member .push-left > .spy-modal__btn-cancel,
+.members__list__member .push-left > .spy-modal__btn-cancel,
 .table-view-cell .push-left > .mail-template__button-select,
-.members-list__member .push-left > .mail-template__button-select,
+.members__list__member .push-left > .mail-template__button-select,
 .table-view-cell .push-left > .mail-template__button-create,
-.members-list__member .push-left > .mail-template__button-create,
+.members__list__member .push-left > .mail-template__button-create,
 .table-view-cell .push-left > .badge,
-.members-list__member .push-left > .badge,
+.members__list__member .push-left > .badge,
 .table-view-cell .push-left > .toggle,
-.members-list__member .push-left > .toggle,
+.members__list__member .push-left > .toggle,
 .table-view-cell .push-right > .btn,
-.members-list__member .push-right > .btn,
+.members__list__member .push-right > .btn,
 .table-view-cell .push-right > .member-summary__btn-edit,
-.members-list__member .push-right > .member-summary__btn-edit,
+.members__list__member .push-right > .member-summary__btn-edit,
 .table-view-cell .push-right > .members__btn-changeTeam,
-.members-list__member .push-right > .members__btn-changeTeam,
+.members__list__member .push-right > .members__btn-changeTeam,
 .table-view-cell .push-right > .division__btn,
-.members-list__member .push-right > .division__btn,
+.members__list__member .push-right > .division__btn,
 .table-view-cell .push-right > .division__btn-submit,
-.members-list__member .push-right > .division__btn-submit,
+.members__list__member .push-right > .division__btn-submit,
 .table-view-cell .push-right > .division__btn-cancel,
-.members-list__member .push-right > .division__btn-cancel,
+.members__list__member .push-right > .division__btn-cancel,
 .table-view-cell .push-right > .spy-buttons__btn-show,
-.members-list__member .push-right > .spy-buttons__btn-show,
+.members__list__member .push-right > .spy-buttons__btn-show,
 .table-view-cell .push-right > .spy-buttons__btn-assign,
-.members-list__member .push-right > .spy-buttons__btn-assign,
+.members__list__member .push-right > .spy-buttons__btn-assign,
 .table-view-cell .push-right > .spy-buttons__btn-next,
-.members-list__member .push-right > .spy-buttons__btn-next,
+.members__list__member .push-right > .spy-buttons__btn-next,
 .table-view-cell .push-right > .spy-buttons__btn-cancel,
-.members-list__member .push-right > .spy-buttons__btn-cancel,
+.members__list__member .push-right > .spy-buttons__btn-cancel,
 .table-view-cell .push-right > .spy-buttons__btn-check,
-.members-list__member .push-right > .spy-buttons__btn-check,
+.members__list__member .push-right > .spy-buttons__btn-check,
 .table-view-cell .push-right > .spy-modal__btn-show,
-.members-list__member .push-right > .spy-modal__btn-show,
+.members__list__member .push-right > .spy-modal__btn-show,
 .table-view-cell .push-right > .spy-modal__btn-next,
-.members-list__member .push-right > .spy-modal__btn-next,
+.members__list__member .push-right > .spy-modal__btn-next,
 .table-view-cell .push-right > .spy-modal__btn-assign,
-.members-list__member .push-right > .spy-modal__btn-assign,
+.members__list__member .push-right > .spy-modal__btn-assign,
 .table-view-cell .push-right > .spy-modal__btn-cancel,
-.members-list__member .push-right > .spy-modal__btn-cancel,
+.members__list__member .push-right > .spy-modal__btn-cancel,
 .table-view-cell .push-right > .mail-template__button-select,
-.members-list__member .push-right > .mail-template__button-select,
+.members__list__member .push-right > .mail-template__button-select,
 .table-view-cell .push-right > .mail-template__button-create,
-.members-list__member .push-right > .mail-template__button-create,
+.members__list__member .push-right > .mail-template__button-create,
 .table-view-cell .push-right > .badge,
-.members-list__member .push-right > .badge,
+.members__list__member .push-right > .badge,
 .table-view-cell .push-right > .toggle,
-.members-list__member .push-right > .toggle,
+.members__list__member .push-right > .toggle,
 .table-view-cell > a .navigate-left > .btn,
-.members-list__member > a .navigate-left > .btn,
+.members__list__member > a .navigate-left > .btn,
 .table-view-cell > a .navigate-left > .member-summary__btn-edit,
-.members-list__member > a .navigate-left > .member-summary__btn-edit,
+.members__list__member > a .navigate-left > .member-summary__btn-edit,
 .table-view-cell > a .navigate-left > .members__btn-changeTeam,
-.members-list__member > a .navigate-left > .members__btn-changeTeam,
+.members__list__member > a .navigate-left > .members__btn-changeTeam,
 .table-view-cell > a .navigate-left > .division__btn,
-.members-list__member > a .navigate-left > .division__btn,
+.members__list__member > a .navigate-left > .division__btn,
 .table-view-cell > a .navigate-left > .division__btn-submit,
-.members-list__member > a .navigate-left > .division__btn-submit,
+.members__list__member > a .navigate-left > .division__btn-submit,
 .table-view-cell > a .navigate-left > .division__btn-cancel,
-.members-list__member > a .navigate-left > .division__btn-cancel,
+.members__list__member > a .navigate-left > .division__btn-cancel,
 .table-view-cell > a .navigate-left > .spy-buttons__btn-show,
-.members-list__member > a .navigate-left > .spy-buttons__btn-show,
+.members__list__member > a .navigate-left > .spy-buttons__btn-show,
 .table-view-cell > a .navigate-left > .spy-buttons__btn-assign,
-.members-list__member > a .navigate-left > .spy-buttons__btn-assign,
+.members__list__member > a .navigate-left > .spy-buttons__btn-assign,
 .table-view-cell > a .navigate-left > .spy-buttons__btn-next,
-.members-list__member > a .navigate-left > .spy-buttons__btn-next,
+.members__list__member > a .navigate-left > .spy-buttons__btn-next,
 .table-view-cell > a .navigate-left > .spy-buttons__btn-cancel,
-.members-list__member > a .navigate-left > .spy-buttons__btn-cancel,
+.members__list__member > a .navigate-left > .spy-buttons__btn-cancel,
 .table-view-cell > a .navigate-left > .spy-buttons__btn-check,
-.members-list__member > a .navigate-left > .spy-buttons__btn-check,
+.members__list__member > a .navigate-left > .spy-buttons__btn-check,
 .table-view-cell > a .navigate-left > .spy-modal__btn-show,
-.members-list__member > a .navigate-left > .spy-modal__btn-show,
+.members__list__member > a .navigate-left > .spy-modal__btn-show,
 .table-view-cell > a .navigate-left > .spy-modal__btn-next,
-.members-list__member > a .navigate-left > .spy-modal__btn-next,
+.members__list__member > a .navigate-left > .spy-modal__btn-next,
 .table-view-cell > a .navigate-left > .spy-modal__btn-assign,
-.members-list__member > a .navigate-left > .spy-modal__btn-assign,
+.members__list__member > a .navigate-left > .spy-modal__btn-assign,
 .table-view-cell > a .navigate-left > .spy-modal__btn-cancel,
-.members-list__member > a .navigate-left > .spy-modal__btn-cancel,
+.members__list__member > a .navigate-left > .spy-modal__btn-cancel,
 .table-view-cell > a .navigate-left > .mail-template__button-select,
-.members-list__member > a .navigate-left > .mail-template__button-select,
+.members__list__member > a .navigate-left > .mail-template__button-select,
 .table-view-cell > a .navigate-left > .mail-template__button-create,
-.members-list__member > a .navigate-left > .mail-template__button-create,
+.members__list__member > a .navigate-left > .mail-template__button-create,
 .table-view-cell > a .navigate-left > .badge,
-.members-list__member > a .navigate-left > .badge,
+.members__list__member > a .navigate-left > .badge,
 .table-view-cell > a .navigate-left > .toggle,
-.members-list__member > a .navigate-left > .toggle,
+.members__list__member > a .navigate-left > .toggle,
 .table-view-cell > a .navigate-right > .btn,
-.members-list__member > a .navigate-right > .btn,
+.members__list__member > a .navigate-right > .btn,
 .table-view-cell > a .navigate-right > .member-summary__btn-edit,
-.members-list__member > a .navigate-right > .member-summary__btn-edit,
+.members__list__member > a .navigate-right > .member-summary__btn-edit,
 .table-view-cell > a .navigate-right > .members__btn-changeTeam,
-.members-list__member > a .navigate-right > .members__btn-changeTeam,
+.members__list__member > a .navigate-right > .members__btn-changeTeam,
 .table-view-cell > a .navigate-right > .division__btn,
-.members-list__member > a .navigate-right > .division__btn,
+.members__list__member > a .navigate-right > .division__btn,
 .table-view-cell > a .navigate-right > .division__btn-submit,
-.members-list__member > a .navigate-right > .division__btn-submit,
+.members__list__member > a .navigate-right > .division__btn-submit,
 .table-view-cell > a .navigate-right > .division__btn-cancel,
-.members-list__member > a .navigate-right > .division__btn-cancel,
+.members__list__member > a .navigate-right > .division__btn-cancel,
 .table-view-cell > a .navigate-right > .spy-buttons__btn-show,
-.members-list__member > a .navigate-right > .spy-buttons__btn-show,
+.members__list__member > a .navigate-right > .spy-buttons__btn-show,
 .table-view-cell > a .navigate-right > .spy-buttons__btn-assign,
-.members-list__member > a .navigate-right > .spy-buttons__btn-assign,
+.members__list__member > a .navigate-right > .spy-buttons__btn-assign,
 .table-view-cell > a .navigate-right > .spy-buttons__btn-next,
-.members-list__member > a .navigate-right > .spy-buttons__btn-next,
+.members__list__member > a .navigate-right > .spy-buttons__btn-next,
 .table-view-cell > a .navigate-right > .spy-buttons__btn-cancel,
-.members-list__member > a .navigate-right > .spy-buttons__btn-cancel,
+.members__list__member > a .navigate-right > .spy-buttons__btn-cancel,
 .table-view-cell > a .navigate-right > .spy-buttons__btn-check,
-.members-list__member > a .navigate-right > .spy-buttons__btn-check,
+.members__list__member > a .navigate-right > .spy-buttons__btn-check,
 .table-view-cell > a .navigate-right > .spy-modal__btn-show,
-.members-list__member > a .navigate-right > .spy-modal__btn-show,
+.members__list__member > a .navigate-right > .spy-modal__btn-show,
 .table-view-cell > a .navigate-right > .spy-modal__btn-next,
-.members-list__member > a .navigate-right > .spy-modal__btn-next,
+.members__list__member > a .navigate-right > .spy-modal__btn-next,
 .table-view-cell > a .navigate-right > .spy-modal__btn-assign,
-.members-list__member > a .navigate-right > .spy-modal__btn-assign,
+.members__list__member > a .navigate-right > .spy-modal__btn-assign,
 .table-view-cell > a .navigate-right > .spy-modal__btn-cancel,
-.members-list__member > a .navigate-right > .spy-modal__btn-cancel,
+.members__list__member > a .navigate-right > .spy-modal__btn-cancel,
 .table-view-cell > a .navigate-right > .mail-template__button-select,
-.members-list__member > a .navigate-right > .mail-template__button-select,
+.members__list__member > a .navigate-right > .mail-template__button-select,
 .table-view-cell > a .navigate-right > .mail-template__button-create,
-.members-list__member > a .navigate-right > .mail-template__button-create,
+.members__list__member > a .navigate-right > .mail-template__button-create,
 .table-view-cell > a .navigate-right > .badge,
-.members-list__member > a .navigate-right > .badge,
+.members__list__member > a .navigate-right > .badge,
 .table-view-cell > a .navigate-right > .toggle,
-.members-list__member > a .navigate-right > .toggle,
+.members__list__member > a .navigate-right > .toggle,
 .table-view-cell > a .push-left > .btn,
-.members-list__member > a .push-left > .btn,
+.members__list__member > a .push-left > .btn,
 .table-view-cell > a .push-left > .member-summary__btn-edit,
-.members-list__member > a .push-left > .member-summary__btn-edit,
+.members__list__member > a .push-left > .member-summary__btn-edit,
 .table-view-cell > a .push-left > .members__btn-changeTeam,
-.members-list__member > a .push-left > .members__btn-changeTeam,
+.members__list__member > a .push-left > .members__btn-changeTeam,
 .table-view-cell > a .push-left > .division__btn,
-.members-list__member > a .push-left > .division__btn,
+.members__list__member > a .push-left > .division__btn,
 .table-view-cell > a .push-left > .division__btn-submit,
-.members-list__member > a .push-left > .division__btn-submit,
+.members__list__member > a .push-left > .division__btn-submit,
 .table-view-cell > a .push-left > .division__btn-cancel,
-.members-list__member > a .push-left > .division__btn-cancel,
+.members__list__member > a .push-left > .division__btn-cancel,
 .table-view-cell > a .push-left > .spy-buttons__btn-show,
-.members-list__member > a .push-left > .spy-buttons__btn-show,
+.members__list__member > a .push-left > .spy-buttons__btn-show,
 .table-view-cell > a .push-left > .spy-buttons__btn-assign,
-.members-list__member > a .push-left > .spy-buttons__btn-assign,
+.members__list__member > a .push-left > .spy-buttons__btn-assign,
 .table-view-cell > a .push-left > .spy-buttons__btn-next,
-.members-list__member > a .push-left > .spy-buttons__btn-next,
+.members__list__member > a .push-left > .spy-buttons__btn-next,
 .table-view-cell > a .push-left > .spy-buttons__btn-cancel,
-.members-list__member > a .push-left > .spy-buttons__btn-cancel,
+.members__list__member > a .push-left > .spy-buttons__btn-cancel,
 .table-view-cell > a .push-left > .spy-buttons__btn-check,
-.members-list__member > a .push-left > .spy-buttons__btn-check,
+.members__list__member > a .push-left > .spy-buttons__btn-check,
 .table-view-cell > a .push-left > .spy-modal__btn-show,
-.members-list__member > a .push-left > .spy-modal__btn-show,
+.members__list__member > a .push-left > .spy-modal__btn-show,
 .table-view-cell > a .push-left > .spy-modal__btn-next,
-.members-list__member > a .push-left > .spy-modal__btn-next,
+.members__list__member > a .push-left > .spy-modal__btn-next,
 .table-view-cell > a .push-left > .spy-modal__btn-assign,
-.members-list__member > a .push-left > .spy-modal__btn-assign,
+.members__list__member > a .push-left > .spy-modal__btn-assign,
 .table-view-cell > a .push-left > .spy-modal__btn-cancel,
-.members-list__member > a .push-left > .spy-modal__btn-cancel,
+.members__list__member > a .push-left > .spy-modal__btn-cancel,
 .table-view-cell > a .push-left > .mail-template__button-select,
-.members-list__member > a .push-left > .mail-template__button-select,
+.members__list__member > a .push-left > .mail-template__button-select,
 .table-view-cell > a .push-left > .mail-template__button-create,
-.members-list__member > a .push-left > .mail-template__button-create,
+.members__list__member > a .push-left > .mail-template__button-create,
 .table-view-cell > a .push-left > .badge,
-.members-list__member > a .push-left > .badge,
+.members__list__member > a .push-left > .badge,
 .table-view-cell > a .push-left > .toggle,
-.members-list__member > a .push-left > .toggle,
+.members__list__member > a .push-left > .toggle,
 .table-view-cell > a .push-right > .btn,
-.members-list__member > a .push-right > .btn,
+.members__list__member > a .push-right > .btn,
 .table-view-cell > a .push-right > .member-summary__btn-edit,
-.members-list__member > a .push-right > .member-summary__btn-edit,
+.members__list__member > a .push-right > .member-summary__btn-edit,
 .table-view-cell > a .push-right > .members__btn-changeTeam,
-.members-list__member > a .push-right > .members__btn-changeTeam,
+.members__list__member > a .push-right > .members__btn-changeTeam,
 .table-view-cell > a .push-right > .division__btn,
-.members-list__member > a .push-right > .division__btn,
+.members__list__member > a .push-right > .division__btn,
 .table-view-cell > a .push-right > .division__btn-submit,
-.members-list__member > a .push-right > .division__btn-submit,
+.members__list__member > a .push-right > .division__btn-submit,
 .table-view-cell > a .push-right > .division__btn-cancel,
-.members-list__member > a .push-right > .division__btn-cancel,
+.members__list__member > a .push-right > .division__btn-cancel,
 .table-view-cell > a .push-right > .spy-buttons__btn-show,
-.members-list__member > a .push-right > .spy-buttons__btn-show,
+.members__list__member > a .push-right > .spy-buttons__btn-show,
 .table-view-cell > a .push-right > .spy-buttons__btn-assign,
-.members-list__member > a .push-right > .spy-buttons__btn-assign,
+.members__list__member > a .push-right > .spy-buttons__btn-assign,
 .table-view-cell > a .push-right > .spy-buttons__btn-next,
-.members-list__member > a .push-right > .spy-buttons__btn-next,
+.members__list__member > a .push-right > .spy-buttons__btn-next,
 .table-view-cell > a .push-right > .spy-buttons__btn-cancel,
-.members-list__member > a .push-right > .spy-buttons__btn-cancel,
+.members__list__member > a .push-right > .spy-buttons__btn-cancel,
 .table-view-cell > a .push-right > .spy-buttons__btn-check,
-.members-list__member > a .push-right > .spy-buttons__btn-check,
+.members__list__member > a .push-right > .spy-buttons__btn-check,
 .table-view-cell > a .push-right > .spy-modal__btn-show,
-.members-list__member > a .push-right > .spy-modal__btn-show,
+.members__list__member > a .push-right > .spy-modal__btn-show,
 .table-view-cell > a .push-right > .spy-modal__btn-next,
-.members-list__member > a .push-right > .spy-modal__btn-next,
+.members__list__member > a .push-right > .spy-modal__btn-next,
 .table-view-cell > a .push-right > .spy-modal__btn-assign,
-.members-list__member > a .push-right > .spy-modal__btn-assign,
+.members__list__member > a .push-right > .spy-modal__btn-assign,
 .table-view-cell > a .push-right > .spy-modal__btn-cancel,
-.members-list__member > a .push-right > .spy-modal__btn-cancel,
+.members__list__member > a .push-right > .spy-modal__btn-cancel,
 .table-view-cell > a .push-right > .mail-template__button-select,
-.members-list__member > a .push-right > .mail-template__button-select,
+.members__list__member > a .push-right > .mail-template__button-select,
 .table-view-cell > a .push-right > .mail-template__button-create,
-.members-list__member > a .push-right > .mail-template__button-create,
+.members__list__member > a .push-right > .mail-template__button-create,
 .table-view-cell > a .push-right > .badge,
-.members-list__member > a .push-right > .badge,
+.members__list__member > a .push-right > .badge,
 .table-view-cell > a .push-right > .toggle,
-.members-list__member > a .push-right > .toggle {
+.members__list__member > a .push-right > .toggle {
   right: 35px;
 }
 
-.content > .table-view:first-child, .spy-modal__content > .table-view:first-child, .content > .members-list:first-child, .spy-modal__content > .members-list:first-child {
+.content > .table-view:first-child, .spy-modal__content > .table-view:first-child, .content > .members__list:first-child, .spy-modal__content > .members__list:first-child {
   margin-top: 15px;
 }
 
@@ -1386,7 +1386,7 @@ select {
   -ms-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-.popover .bar ~ .table-view, .popover .bar ~ .members-list {
+.popover .bar ~ .table-view, .popover .bar ~ .members__list {
   padding-top: 44px;
 }
 
@@ -1414,7 +1414,7 @@ select {
   box-shadow: none;
 }
 
-.popover .table-view, .popover .members-list {
+.popover .table-view, .popover .members__list {
   max-height: 300px;
   margin-bottom: 0;
   overflow: auto;
@@ -1764,7 +1764,7 @@ select {
   content: '\e822';
 }
 
-.members-list__member {
+.members__list__member {
   padding-right: 11px;
 }
 

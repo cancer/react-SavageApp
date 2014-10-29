@@ -18,7 +18,7 @@ module.exports = React.createClass
 
   render: ->
     className = @props.className
-    BEMElement =
+    bemClassName =
       name               : "#{className}__name"
       nameLabel          : "#{className}__name__label"
       nameValue          : "#{className}__name__value"
@@ -34,24 +34,24 @@ module.exports = React.createClass
     classSet = React.addons.classSet _classes
 
     <div className={classSet}>
-      <div className={BEMElement.name}>
-        <div className={BEMElement.nameLabel}>名前</div>
-        <div className={BEMElement.nameValue}>
+      <div className={bemClassName.name}>
+        <div className={bemClassName.nameLabel}>名前</div>
+        <div className={bemClassName.nameValue}>
           <input type="text" defaultValue={@props.member.name} ref="name" />
         </div>
       </div>
-      <div className={BEMElement.action}>
-        <div className={BEMElement.actionBtnForSave}>
+      <div className={bemClassName.action}>
+        <div className={bemClassName.actionBtnForSave}>
           <a className="btn btn-positive btn-block btn-outlined" onClick={@handleSave}>
             <i className="icon icon-edit" />
           </a>
         </div>
-        <div className={BEMElement.actionBtnForDelete}>
+        <div className={bemClassName.actionBtnForDelete}>
           <a className="btn btn-negative btn-block btn-outlined" onClick={@handleDelete}>
             <i className="icon icon-trash" />
           </a>
         </div>
-        <div className={BEMElement.actionBtnForClose} onClick={@handleClose}>
+        <div className={bemClassName.actionBtnForClose} onClick={@handleClose}>
           <a className="btn btn-block btn-outlined">
             <i className="icon icon-close" />
           </a>

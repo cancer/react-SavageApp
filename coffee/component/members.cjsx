@@ -8,17 +8,24 @@ MailTemplate = require './members/mail.cjsx'
 
 Members = React.createClass
   render: ->
-    <div className="members">
-      <div className="members-headline">
-        <h2 className="members-headline__title">
+    className = @props.className
+    bemClassName =
+      headline      : "#{className}-headline"
+      headlineTitle : "#{className}-headline__title"
+      headlineLead  : "#{className}-headline__lead"
+      add           : "#{className}-add"
+      list          : "#{className}__list"
+    <div className={className}>
+      <div className={bemClassName.headline}>
+        <h2 className={bemClassName.headlineTitle}>
           メンバーリスト
         </h2>
       </div>
-      <p className="members-headline__lead">
+      <p className={bemClassName.headlineLead}>
         サバゲ部のメンバーを管理できます
       </p>
-      <MemberAdd   className="member-add" />
-      <MembersList className="members-list" />
+      <MemberAdd   className={bemClassName.add} />
+      <MembersList className={bemClassName.list} />
       <MailTemplate />
     </div>
 

@@ -1,11 +1,11 @@
 //メンバー
 .members {}
 //# メンバーリスト
-.members-list {
+.members__list {
   @extend .table-view;
 }
 //メンバーリストの各行
-.members-list__member {
+.members__list__member {
   @extend .table-view-cell;
   padding-right: 11px;
 }
